@@ -6,14 +6,14 @@ const siteName =
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-10 border-b border-[--color-border] bg-[--color-bg]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-10 border-b border-border bg-bg/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-4xl items-center justify-between px-4">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-white"
         >
           <PlaySquare
-            className="h-6 w-6 text-[--color-accent]"
+            className="h-6 w-6 text-accent"
             fill="currentColor"
             aria-hidden="true"
           />

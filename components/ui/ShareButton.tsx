@@ -43,7 +43,7 @@ export function ShareButton({ url, title }: ShareButtonProps) {
       onClick={handleClick}
       disabled={busy}
       aria-live="polite"
-      className="inline-flex h-10 items-center gap-2 rounded-full border border-[--color-border] bg-[--color-surface-2] px-5 text-sm font-semibold text-[--color-text] transition-colors hover:bg-[--color-border] active:scale-[0.98] disabled:opacity-60"
+      className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-surface-2 px-5 text-sm font-semibold text-text transition-colors hover:bg-border active:scale-[0.98] disabled:opacity-60"
     >
       {copied ? (
         <>

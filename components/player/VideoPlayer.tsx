@@ -13,7 +13,7 @@ export function VideoPlayer({ videoId, embedUrl }: VideoPlayerProps) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-[--color-border] bg-black">
+    <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-black">
       {!loaded && !failed && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <Loader2

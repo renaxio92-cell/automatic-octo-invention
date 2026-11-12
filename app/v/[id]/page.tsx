@@ -79,9 +79,9 @@ export default async function VideoPage({ params }: PageProps) {
         </section>
 
         {/* Action Bar (Like & Share) */}
-        <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-[--color-border] bg-[--color-surface] p-5 md:flex-row md:items-center md:justify-between">
+        <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2 text-sm font-medium">
-            <span className="text-[--color-text]">Bagikan video ini</span>
+            <span className="text-text">Bagikan video ini</span>
           </div>
           <div className="flex items-center gap-3">
             <LikeButton videoId={data.video.id} />
