@@ -8,6 +8,9 @@ interface ShareButtonProps {
   title: string;
 }
 
+type ShareFn = (data: { title?: string; url?: string }) => Promise<void>;
+type NavigatorWithShare = Navigator & { share?: ShareFn };
+
 export function ShareButton({ url, title }: ShareButtonProps) {
   const [copied, setCopied] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -19,12 +22,9 @@ export function ShareButton({ url, title }: ShareButtonProps) {
       ? url
       : `${window.location.origin}${url}`;
     try {
-      if (typeof navigator !== "undefined" && "share" in navigator) {
-        await (
-          navigator as Navigator & {
-            share: (data: { title?: string; url?: string }) => Promise<void>;
-          }
-        ).share({ title, url: fullUrl });
+      const shareFn = (navigator as NavigatorWithShare).share;
+      if (typeof shareFn === "function") {
+        await shareFn.call(navigator, { title, url: fullUrl });
         return;
       }
       await navigator.clipboard.writeText(fullUrl);
