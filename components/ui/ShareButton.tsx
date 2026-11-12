@@ -31,7 +31,7 @@ export function ShareButton({ url, title }: ShareButtonProps) {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // User cancelled share or clipboard failed — no-op
+      // no-op
     } finally {
       setBusy(false);
     }
@@ -43,7 +43,7 @@ export function ShareButton({ url, title }: ShareButtonProps) {
       onClick={handleClick}
       disabled={busy}
       aria-live="polite"
-      className="inline-flex h-9 items-center gap-2 rounded-lg border border-[--color-border] bg-[--color-surface] px-3 text-sm transition-colors hover:bg-[--color-surface-2] active:scale-[0.98] disabled:opacity-60"
+      className="inline-flex h-10 items-center gap-2 rounded-full border border-[--color-border] bg-[--color-surface-2] px-5 text-sm font-semibold text-[--color-text] transition-colors hover:bg-[--color-border] active:scale-[0.98] disabled:opacity-60"
     >
       {copied ? (
         <>

@@ -16,9 +16,7 @@ export function LikeButton({ videoId }: LikeButtonProps) {
     setMounted(true);
     try {
       setLiked(window.localStorage.getItem(storageKey) === "1");
-    } catch {
-      // ignore storage errors
-    }
+    } catch {}
   }, [storageKey]);
 
   function toggle() {
@@ -27,9 +25,7 @@ export function LikeButton({ videoId }: LikeButtonProps) {
     try {
       if (next) window.localStorage.setItem(storageKey, "1");
       else window.localStorage.removeItem(storageKey);
-    } catch {
-      // ignore storage errors
-    }
+    } catch {}
   }
 
   return (
@@ -37,11 +33,14 @@ export function LikeButton({ videoId }: LikeButtonProps) {
       type="button"
       onClick={toggle}
       aria-pressed={mounted ? liked : undefined}
-      className="inline-flex h-9 items-center gap-2 rounded-lg border border-[--color-border] bg-[--color-surface] px-3 text-sm transition-colors hover:bg-[--color-surface-2] active:scale-[0.98]"
+      className={`inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-all active:scale-[0.98] ${
+        liked
+          ? "bg-[--color-accent] text-white hover:bg-[--color-accent-hover]"
+          : "border border-[--color-border] bg-[--color-surface-2] text-[--color-text] hover:bg-[--color-border]"
+      }`}
     >
       <Heart
-        className={`h-4 w-4 ${liked ? "text-[--color-accent]" : ""}`}
-        fill={liked ? "currentColor" : "none"}
+        className={`h-4 w-4 ${liked ? "fill-white" : ""}`}
         aria-hidden="true"
       />
       <span>{liked ? "Liked" : "Like"}</span>

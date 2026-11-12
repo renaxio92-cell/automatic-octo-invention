@@ -8,7 +8,7 @@ interface MetadataBadgesProps {
 export function MetadataBadges({ metadata }: MetadataBadgesProps) {
   if (!metadata) {
     return (
-      <p className="text-xs text-[--color-muted]">
+      <p className="text-sm text-[--color-muted]">
         Metadata video belum tersedia.
       </p>
     );
@@ -22,15 +22,15 @@ export function MetadataBadges({ metadata }: MetadataBadgesProps) {
   ];
 
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap gap-2.5">
       {items.map(({ icon: Icon, label, value }) => (
         <li
           key={label}
-          className="inline-flex items-center gap-1.5 rounded-md border border-[--color-border] bg-[--color-surface] px-2.5 py-1 text-xs text-[--color-muted]"
+          className="inline-flex items-center gap-2 rounded-full border border-[--color-border] bg-[--color-surface] px-3.5 py-1.5 text-sm text-[--color-text]"
         >
-          <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+          <Icon className="h-4 w-4 text-[--color-accent]" aria-hidden="true" />
           <span className="sr-only">{label}:</span>
-          <span className="text-[--color-text]">{value}</span>
+          <span className="font-medium">{value}</span>
         </li>
       ))}
     </ul>
