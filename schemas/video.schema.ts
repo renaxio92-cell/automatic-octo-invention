@@ -13,7 +13,7 @@ export const videoEntrySchema = z
       .string()
       .url("embedUrl harus URL valid")
       .refine((u) => u.startsWith("https://"), "embedUrl harus HTTPS")
-      .refine((u) => u.startsWith("https://vski.cc/"), "embedUrl harus dari domain vski.cc"),
+      .refine((u) => u.startsWith("https://filecoster.com/"), "embedUrl harus dari domain filecoster.com"),
   })
   .strict();
 
