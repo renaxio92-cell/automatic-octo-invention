@@ -12,15 +12,15 @@ export function SiteFooter() {
           © {year} {siteName}
         </p>
         <div className="flex gap-4">
-          <Link href="/" className="hover:text-white transition-colors">
+          <Link href="/" className="transition-colors hover:text-white">
             Home
           </Link>
-          <span className="cursor-default hover:text-white transition-colors">
+          <Link href="/terms" className="transition-colors hover:text-white">
             Terms
-          </span>
-          <span className="cursor-default hover:text-white transition-colors">
+          </Link>
+          <Link href="/contact" className="transition-colors hover:text-white">
             Contact
-          </span>
+          </Link>
         </div>
       </div>
     </footer>
