@@ -1,0 +1,37 @@
+{
+  "name": "personal-video-streaming",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "assign-metadata": "tsx scripts/assign-video-metadata.ts",
+    "validate-data": "tsx scripts/validate-video-data.ts"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.468.0",
+    "zod": "^3.23.8",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "tsx": "^4.19.2",
+    "eslint": "^9.15.0",
+    "eslint-config-next": "^16.0.0",
+    "@eslint/eslintrc": "^3.2.0"
+  }
+}
