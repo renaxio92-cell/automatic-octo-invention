@@ -11,6 +11,7 @@ export function Histats() {
   useEffect(() => {
     const container = ref.current;
     if (!TRACKING_ENABLED || !CODE || !container) return;
+
     container.innerHTML = "";
     const template = document.createElement("template");
     template.innerHTML = CODE;
@@ -33,5 +34,6 @@ export function Histats() {
   }, []);
 
   if (!TRACKING_ENABLED || !CODE) return null;
+
   return <div ref={ref} aria-hidden="true" />;
 }

@@ -11,6 +11,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  // Jika dimatikan, langsung kembalikan OK
   if (process.env.RECAPTCHA_ENABLED !== "true") {
     return NextResponse.json({ ok: true });
   }
@@ -41,7 +42,7 @@ export async function POST(request: Request) {
 
   const sessionValue = createCaptchaSession();
   if (!sessionValue) {
-    console.error("[captcha] CAPTCHA_SESSION_SECRET missing");
+    console.error("[captcha] CAPTCHA_SESSION_SECRET atau RECAPTCHA_SECRET_KEY tidak diset");
     return NextResponse.json(
       { error: "Server configuration error" },
       { status: 500 }

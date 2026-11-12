@@ -24,6 +24,7 @@ export function AdSlot({ position, className }: AdSlotProps) {
   useEffect(() => {
     const container = ref.current;
     if (!container || !code) return;
+
     container.innerHTML = "";
     const template = document.createElement("template");
     template.innerHTML = code;
@@ -45,6 +46,7 @@ export function AdSlot({ position, className }: AdSlotProps) {
     };
   }, [code]);
 
+  // Jika env kosong, jangan render apa pun (tidak ada ruang kosong)
   if (!code) return null;
 
   return (

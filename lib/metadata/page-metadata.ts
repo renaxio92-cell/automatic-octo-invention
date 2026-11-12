@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { videoIdSchema } from "@/schemas/video.schema";
 
 export function buildPageMetadata(id: string): Metadata {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
-  const siteName =
-    process.env.NEXT_PUBLIC_SITE_NAME ?? "Personal Video Streaming";
+  // Fallback URL jika env belum diisi
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? "Personal Video Streaming";
   const ogPath = process.env.NEXT_PUBLIC_OG_IMAGE_PATH ?? "/images/og-default.jpg";
 
-  const metadataBase = new URL(siteUrl || "https://example.com");
+  const metadataBase = new URL(siteUrl);
   const valid = videoIdSchema.safeParse(id).success;
 
   if (!valid) {
