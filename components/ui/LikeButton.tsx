@@ -33,14 +33,14 @@ export function LikeButton({ videoId }: LikeButtonProps) {
       type="button"
       onClick={toggle}
       aria-pressed={mounted ? liked : undefined}
-      className={`inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-all active:scale-[0.98] ${
+      className={`inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-bold transition-all active:scale-[0.98] ${
         liked
           ? "bg-accent text-white hover:bg-accent-hover border border-accent"
-          : "border border-border bg-surface-2 text-text hover:bg-border"
+          : "border border-accent text-accent hover:bg-accent/10"
       }`}
     >
       <Heart
-        className={`h-4 w-4 ${liked ? "fill-white text-white" : ""}`}
+        className={`h-4 w-4 ${liked ? "fill-white text-white" : "fill-transparent"}`}
         aria-hidden="true"
       />
       <span>{liked ? "Liked" : "Like"}</span>

@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #09090b;
-  --color-surface: #18181b;
-  --color-surface-2: #27272a;
+  --color-bg: #050505;
+  --color-surface: #121214;
+  --color-surface-2: #1c1c1f;
   --color-border: #3f3f46;
   --color-text: #f4f4f5;
   --color-muted: #a1a1aa;
-  --color-accent: #ff3b5c;
-  --color-accent-hover: #e11d48;
+  --color-accent: #ff1a75;
+  --color-accent-hover: #e6005c;
 }
 
 :root {
@@ -19,12 +19,17 @@ html,
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  min-height: 100vh;
 }
 
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse at 50% -20%, rgba(255, 26, 117, 0.15), transparent 60%),
+    radial-gradient(ellipse at 50% 120%, rgba(26, 43, 117, 0.1), transparent 60%);
+  background-attachment: fixed;
 }
 
 *:focus-visible {
@@ -34,6 +39,6 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 59, 92, 0.35);
+  background: rgba(255, 26, 117, 0.4);
   color: #fff;
 }

@@ -52,6 +52,7 @@ export default async function VideoPage({ params }: PageProps) {
       <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-6 md:py-8">
         <AdSlot position="header" />
 
+        {/* Video Player */}
         <section className="mt-2" aria-label="Video player">
           {captchaOk ? (
             <VideoPlayer
@@ -65,17 +66,20 @@ export default async function VideoPage({ params }: PageProps) {
           )}
         </section>
 
+        {/* Title */}
         <section className="mt-6">
           <h1 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
             {displayTitle}
           </h1>
         </section>
 
+        {/* Metadata Badges */}
         <section className="mt-4">
           <MetadataBadges metadata={data.metadata} />
         </section>
 
-        <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5 md:flex-row md:items-center md:justify-between">
+        {/* Action Bar (Like & Share) - Dengan Efek Melayang 3D */}
+        <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/5 bg-surface/80 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-sm md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2 text-sm font-medium">
             <span className="text-text">Bagikan video ini</span>
           </div>
@@ -85,6 +89,7 @@ export default async function VideoPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Adsterra Slot */}
         <div className="mt-6">
           <AdSlot position="player" />
         </div>

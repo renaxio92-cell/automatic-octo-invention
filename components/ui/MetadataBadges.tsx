@@ -26,11 +26,11 @@ export function MetadataBadges({ metadata }: MetadataBadgesProps) {
       {items.map(({ icon: Icon, label, value }) => (
         <li
           key={label}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm text-text"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm"
         >
           <Icon className="h-4 w-4 text-accent" aria-hidden="true" />
           <span className="sr-only">{label}:</span>
-          <span className="font-medium">{value}</span>
+          <span className="font-semibold text-accent">{value}</span>
         </li>
       ))}
     </ul>
