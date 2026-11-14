@@ -12,9 +12,7 @@ export const videoEntrySchema = z
     embedUrl: z
       .string()
       .url("embedUrl harus URL valid")
-      .refine((u) => u.startsWith("https://"), "embedUrl harus HTTPS")
-      // Memastikan domain adalah filecoster.com (mendukung /e/ maupun /d/)
-      .refine((u) => u.startsWith("https://filecoster.com/"), "embedUrl harus dari domain filecoster.com"),
+      .refine((u) => u.startsWith("https://"), "embedUrl harus HTTPS"),
   })
   .strict();
 
