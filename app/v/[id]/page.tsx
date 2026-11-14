@@ -36,7 +36,6 @@ export default async function VideoPage({ params }: PageProps) {
   const data = getVideoById(parsed.data);
   if (!data) notFound();
 
-  // Jika env kosong, captchaEnabled = false (langsung tampil player)
   const captchaEnabled = process.env.RECAPTCHA_ENABLED === "true";
   const cookieStore = await cookies();
   const captchaOk =

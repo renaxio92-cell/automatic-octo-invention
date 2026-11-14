@@ -6,7 +6,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "frame-src 'self' https://www.google.com https://filecoster.com",
+  "frame-src 'self' https://www.google.com https://filecoster.com https://vski.cc",
   "connect-src 'self' https:",
   "frame-ancestors 'self'",
   "base-uri 'self'",

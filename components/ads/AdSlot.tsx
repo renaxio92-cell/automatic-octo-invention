@@ -46,7 +46,6 @@ export function AdSlot({ position, className }: AdSlotProps) {
     };
   }, [code]);
 
-  // Jika env kosong, jangan render apa pun (tidak ada ruang kosong)
   if (!code) return null;
 
   return (
